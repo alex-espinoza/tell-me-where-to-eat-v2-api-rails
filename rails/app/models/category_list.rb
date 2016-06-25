@@ -124,7 +124,7 @@ class CategoryList
     'taiwanese',
     'tapas',
     'tapasmallplates',
-    'mex',
+    'tex-mex',
     'thai',
     'turkish',
     'ukrainian',
