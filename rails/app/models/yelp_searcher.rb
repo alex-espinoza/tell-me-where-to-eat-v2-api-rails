@@ -27,7 +27,7 @@ class YelpSearcher
   end
 
   def choose_random_business
-    random = Random.rand(0...@response.total)
+    random = Random.rand(0...@response.businesses.length)
     @response.businesses[random]
   end
 end
