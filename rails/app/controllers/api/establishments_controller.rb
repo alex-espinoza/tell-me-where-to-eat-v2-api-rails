@@ -10,8 +10,9 @@ class Api::EstablishmentsController < ApplicationController
       return
     end
 
-    establishment = searcher.choose_random_business
+    random_establishment = searcher.choose_random_business
+    establishment = Establishment.build_for_api_response(random_establishment)
 
-    render json: {name: establishment.name}
+    render json: establishment
   end
 end
