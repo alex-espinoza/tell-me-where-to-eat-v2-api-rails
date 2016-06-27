@@ -80,6 +80,9 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    passenger (5.0.29)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.4)
     pkg-config (1.1.7)
     pry (0.10.3)
@@ -88,7 +91,6 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    puma (3.4.0)
     rack (2.0.0.rc1)
       json
     rack-test (0.6.3)
@@ -156,9 +158,9 @@ DEPENDENCIES
   byebug
   figaro
   listen (~> 3.0.5)
+  passenger (>= 5.0.25)
   pg (~> 0.18)
   pry-rails
-  puma (~> 3.0)
   rails (>= 5.0.0.rc2, < 5.1)
   spring
   spring-watcher-listen (~> 2.0.0)
