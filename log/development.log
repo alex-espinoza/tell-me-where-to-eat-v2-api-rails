@@ -1,0 +1,1627 @@
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(871509346714774845);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-06-25 16:01:41 UTC], ["updated_at", 2016-06-25 16:01:41 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(871509346714774845)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 12:26:55 -0400
+  
+LoadError (Unable to autoload constant Api::EstablishmentsController, expected /Users/alex/Development/tell-me-where-to-eat-v2/rails/app/controllers/api/establishments_controller.rb to define it):
+  
+activesupport (5.0.0.rc2) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.0.0.rc2) lib/active_support/dependencies.rb:203:in `const_missing'
+activesupport (5.0.0.rc2) lib/active_support/inflector/methods.rb:270:in `const_get'
+activesupport (5.0.0.rc2) lib/active_support/inflector/methods.rb:270:in `block in constantize'
+activesupport (5.0.0.rc2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.rc2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.rc2) lib/active_support/inflector/methods.rb:266:in `constantize'
+activesupport (5.0.0.rc2) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.0.0.rc2) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.0.0.rc2) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.0.rc1) lib/rack/etag.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.0.rc2) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 12:27:21 -0400
+Processing by Api::EstablishmentsController#find as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 13:06:25 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 750149ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/api/establishments_controller.rb:4:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 13:19:11 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 47551ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/api/establishments_controller.rb:4:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 13:20:10 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 18282ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/api/establishments_controller.rb:4:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 13:21:36 -0400
+Processing by Api::EstablishmentsController#find as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.1ms)
+Completed 200 OK in 2720864ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 14:37:10 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::MissingLatLng (Yelp::Error::MissingLatLng):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:5:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 14:39:05 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 421894ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::MissingLatLng (Yelp::Error::MissingLatLng):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:10:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 14:46:23 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed 500 Internal Server Error in 439980ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::MissingLatLng (Yelp::Error::MissingLatLng):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:10:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 14:54:31 -0400
+Processing by Api::EstablishmentsController#find as */*
+Completed   in 640170ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:05:18 -0400
+Processing by Api::EstablishmentsController#find as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 18065ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:06:57 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 15091ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:07:14 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 608ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidParameter (Yelp::Error::InvalidParameter):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:5:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:08:40 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 10651ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:08:52 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 18223ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:09:12 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 13338ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:09:31 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidParameter (Yelp::Error::InvalidParameter):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:5:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:12:42 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 568ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:12:44 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 409293ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `total' for nil:NilClass):
+  
+app/models/yelp_searcher.rb:30:in `choose_random_business'
+app/controllers/api/establishments_controller.rb:12:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:19:45 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 845ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:19:47 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 1831ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:19:52 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 738ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:19:54 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 638ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:21 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 860ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:24 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 831ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:26 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 576ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:29 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 1014ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:31 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 756ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:33 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 837ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:36 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 779ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:38 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 625ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:20:41 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 823ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:16 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 1401ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:18 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 897ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:21 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 991ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:23 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 876ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:38 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 828ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:42 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 930ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:49 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1215ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:52 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 760ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:54 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 846ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:57 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 408ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:22:59 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 632ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:00 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 1849ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:07 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 1116ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:50 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 739ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:53 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 622ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:55 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 577ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:23:57 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1462ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:00 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1682ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:03 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 911ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:05 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 699ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:07 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 628ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:09 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 673ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:11 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 693ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:13 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 835ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:15 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 725ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:17 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 694ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:18 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 697ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:20 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 573ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:22 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 864ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:24 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 954ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:26 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1112ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:28 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 649ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:30 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 784ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:31 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 1602ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:36 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 1086ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:39 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 946ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:41 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 802ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:43 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 703ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:45 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2262ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:24:51 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 754ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:34:15 -0400
+  
+SyntaxError (/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/controllers/api/establishments_controller.rb:14: syntax error, unexpected '{', expecting keyword_then or ';' or '\n'
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/controllers/api/establishments_controller.rb:16: syntax error, unexpected '}', expecting keyword_end):
+  
+app/controllers/api/establishments_controller.rb:14: syntax error, unexpected '{', expecting keyword_then or ';' or '\n'
+app/controllers/api/establishments_controller.rb:16: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:34:40 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 701ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/api/establishments_controller.rb:18:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:34:54 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 748ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:08 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 743ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:10 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1116ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:12 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 799ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:14 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 376ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:16 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 920ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:18 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 708ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:35:20 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 380195ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/api/establishments_controller.rb:18:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:41:48 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.38ms)
+Completed 200 OK in 764ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:41:51 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 1117ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:41:53 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 570ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:41:55 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 681ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:41:57 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 840ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:00 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 692ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:02 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 750ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:04 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 538ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:05 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 714ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:06 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 678ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:09 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 818ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:11 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 847ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:14 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 804ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:19 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 797ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:23 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 609ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:26 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 796ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:29 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 923ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:31 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 1076ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:34 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 953ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:38 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 631ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:42 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 984ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:45 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 652ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:47 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 958ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:51 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 735ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:53 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 924ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:56 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 613ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:42:59 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 633ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:43:02 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 1137ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:43:06 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 715ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:43:10 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 670ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-25 15:43:13 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 646ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:34:39 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:3: syntax error, unexpected tIDENTIFIER, expecting ']'
+    'afghani'a,
+              ^
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:4: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:5: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:6: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:7: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:8: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:9: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:10: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:11: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:12: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:13: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:14: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:15: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:16: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:17: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:18: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:19: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:20: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:21: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:22: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:23: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:24: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:25: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:26: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:27: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:28: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:29: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:30: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:31: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:32: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:33: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:34: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:35: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:36: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:37: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:38: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:39: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:40: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:41: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:42: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:43: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:44: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:45: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:46: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:47: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:48: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:49: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:50: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:51: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:52: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:53: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:54: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:55: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:56: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:57: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:58: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:59: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:60: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:61: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:62: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:63: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:64: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:65: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:66: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:67: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:68: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:69: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:70: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:71: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:72: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:73: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:74: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:75: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:76: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:77: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:78: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:79: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:80: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:81: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:82: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:83: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:84: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:85: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:86: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:87: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:88: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:89: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:90: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:91: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:92: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:93: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:94: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:95: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:96: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:97: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:98: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:99: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:100: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:101: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:102: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:103: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:104: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:105: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:106: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:107: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:108: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:109: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:110: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:111: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:112: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:113: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:114: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:115: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:116: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:117: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:118: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:119: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:120: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:121: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:122: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:123: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:124: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:125: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:126: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:127: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:128: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:129: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:130: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:131: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:132: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:133: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:134: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:136: syntax error, unexpected ']', expecting keyword_end):
+  
+app/models/category_list.rb:3: syntax error, unexpected tIDENTIFIER, expecting ']'
+app/models/category_list.rb:4: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/models/category_list.rb:5: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:6: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:7: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:8: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:10: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:11: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:12: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:15: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:18: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:19: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:20: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:21: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:22: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:23: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:24: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:26: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:28: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:29: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:30: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:31: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:32: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:33: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:34: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:35: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:36: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:37: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:38: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:39: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:40: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:41: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:42: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:43: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:44: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:45: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:46: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:47: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:48: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:49: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:50: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:51: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:52: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:53: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:54: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:55: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:56: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:57: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:58: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:59: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:60: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:61: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:62: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:63: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:64: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:65: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:66: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:67: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:68: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:69: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:70: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:71: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:72: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:73: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:74: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:75: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:76: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:77: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:78: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:79: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:80: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:81: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:82: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:83: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:84: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:85: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:86: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:87: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:88: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:89: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:90: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:91: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:92: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:93: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:94: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:95: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:96: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:98: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:99: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:100: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:101: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:102: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:103: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:104: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:105: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:106: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:107: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:108: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:109: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:110: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:111: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:112: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:113: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:114: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:115: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:116: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:117: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:118: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:119: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:120: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:121: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:122: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:123: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:124: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:125: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:126: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:127: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:128: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:129: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:130: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:131: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:132: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:133: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:134: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:136: syntax error, unexpected ']', expecting keyword_end
+app/models/yelp_searcher.rb:12:in `create_randomized_search_parameters'
+app/controllers/api/establishments_controller.rb:4:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:34:52 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:3: syntax error, unexpected tIDENTIFIER, expecting ']'
+    'afghani'a,
+              ^
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:4: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:5: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:6: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:7: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:8: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:9: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:10: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:11: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:12: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:13: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:14: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:15: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:16: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:17: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:18: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:19: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:20: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:21: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:22: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:23: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:24: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:25: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:26: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:27: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:28: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:29: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:30: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:31: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:32: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:33: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:34: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:35: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:36: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:37: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:38: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:39: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:40: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:41: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:42: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:43: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:44: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:45: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:46: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:47: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:48: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:49: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:50: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:51: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:52: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:53: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:54: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:55: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:56: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:57: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:58: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:59: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:60: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:61: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:62: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:63: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:64: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:65: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:66: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:67: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:68: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:69: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:70: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:71: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:72: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:73: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:74: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:75: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:76: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:77: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:78: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:79: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:80: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:81: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:82: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:83: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:84: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:85: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:86: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:87: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:88: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:89: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:90: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:91: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:92: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:93: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:94: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:95: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:96: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:97: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:98: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:99: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:100: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:101: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:102: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:103: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:104: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:105: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:106: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:107: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:108: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:109: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:110: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:111: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:112: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:113: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:114: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:115: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:116: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:117: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:118: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:119: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:120: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:121: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:122: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:123: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:124: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:125: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:126: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:127: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:128: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:129: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:130: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:131: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:132: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:133: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:134: syntax error, unexpected ',', expecting keyword_end
+/Users/alex/Development/tell-me-where-to-eat-v2/rails/app/models/category_list.rb:136: syntax error, unexpected ']', expecting keyword_end):
+  
+app/models/category_list.rb:3: syntax error, unexpected tIDENTIFIER, expecting ']'
+app/models/category_list.rb:4: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/models/category_list.rb:5: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:6: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:7: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:8: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:10: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:11: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:12: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:15: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:18: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:19: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:20: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:21: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:22: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:23: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:24: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:26: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:28: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:29: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:30: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:31: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:32: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:33: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:34: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:35: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:36: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:37: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:38: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:39: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:40: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:41: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:42: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:43: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:44: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:45: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:46: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:47: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:48: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:49: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:50: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:51: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:52: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:53: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:54: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:55: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:56: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:57: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:58: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:59: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:60: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:61: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:62: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:63: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:64: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:65: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:66: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:67: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:68: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:69: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:70: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:71: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:72: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:73: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:74: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:75: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:76: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:77: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:78: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:79: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:80: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:81: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:82: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:83: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:84: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:85: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:86: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:87: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:88: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:89: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:90: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:91: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:92: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:93: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:94: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:95: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:96: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:98: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:99: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:100: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:101: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:102: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:103: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:104: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:105: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:106: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:107: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:108: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:109: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:110: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:111: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:112: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:113: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:114: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:115: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:116: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:117: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:118: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:119: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:120: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:121: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:122: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:123: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:124: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:125: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:126: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:127: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:128: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:129: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:130: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:131: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:132: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:133: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:134: syntax error, unexpected ',', expecting keyword_end
+app/models/category_list.rb:136: syntax error, unexpected ']', expecting keyword_end
+app/models/yelp_searcher.rb:12:in `create_randomized_search_parameters'
+app/controllers/api/establishments_controller.rb:4:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:35:16 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 967ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidParameter (Yelp::Error::InvalidParameter):
+  
+app/models/yelp_searcher.rb:16:in `search'
+app/controllers/api/establishments_controller.rb:7:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:37:27 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 200 OK in 1229ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:38:54 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 929ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:39:05 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 195ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:39:06 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 278ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 20:58:18 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 163991ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:06:32 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 1485ms (ActiveRecord: 37.8ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for Establishment(Table doesn't exist):Class
+Did you mean?  attr_accessor):
+  
+app/models/establishment.rb:2:in `<class:Establishment>'
+app/models/establishment.rb:1:in `<top (required)>'
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:07:00 -0400
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 858ms (ActiveRecord: 11.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "establishments" does not exist
+LINE 8:                WHERE a.attrelid = '"establishments"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"establishments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(871509346714774845);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (24.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEstablishments (20160627011504)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.6ms)[0m  [1m[35mCREATE TABLE "establishments" ("id" serial primary key, "name" character varying, "categories" character varying, "phone_number" character varying, "url" character varying, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (19.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160627011504"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(871509346714774845)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'establishments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:15:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 755ms (ActiveRecord: 6.5ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:18:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 1080ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `build_for_api_response' for #<Class:0x007f88458a1388>):
+  
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:18:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+Completed 500 Internal Server Error in 679ms (ActiveRecord: 5.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for #<Yelp::Response::Model::Business:0x007ff31d5d71c8>):
+  
+app/models/establishment.rb:6:in `build_for_api_response'
+app/controllers/api/establishments_controller.rb:14:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:19:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+Completed   in 107711ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:21:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 1142ms (Views: 6.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:21:20 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 643ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:21:32 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1062ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:21:42 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 586ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:22:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 1380ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:22:04 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 757ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:22:06 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 830ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:22:44 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 733ms (Views: 2.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2016-06-26 21:22:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:26:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::JsonApi (6.47ms)
+Completed 200 OK in 1118ms (Views: 19.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:27:41 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::JsonApi (0.8ms)
+Completed 200 OK in 643ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:28:40 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::JsonApi (1.55ms)
+Completed 200 OK in 1225ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:30:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (1.87ms)
+Completed 200 OK in 1073ms (Views: 16.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 21:36:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (2.94ms)
+Completed 200 OK in 1125ms (Views: 15.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 22:29:36 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (3.66ms)
+Completed 500 Internal Server Error in 968ms
+
+
+  
+NoMethodError (undefined method `model_name' for Establishment:Class):
+  
+app/controllers/api/establishments_controller.rb:16:in `find'
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 22:32:36 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (2.03ms)
+Completed 200 OK in 842ms (Views: 14.0ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 22:32:45 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 200 OK in 905ms (Views: 0.9ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 22:34:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (2.54ms)
+Completed 200 OK in 1055ms (Views: 16.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/establishments/find" for ::1 at 2016-06-26 22:34:32 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (0.43ms)
+Completed 200 OK in 1065ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2016-06-26 23:50:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/alex/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alex/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/establishments/find" for 127.0.0.1 at 2016-06-26 23:50:48 -0400
+Processing by Api::EstablishmentsController#find as JSON
+[active_model_serializers] Rendered EstablishmentSerializer with ActiveModelSerializers::Adapter::Json (2.35ms)
+Completed 200 OK in 1131ms (Views: 14.3ms | ActiveRecord: 11.3ms)
+
+
