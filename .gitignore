@@ -1,4 +1,6 @@
 config/application.yml
+tmp
+log
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
