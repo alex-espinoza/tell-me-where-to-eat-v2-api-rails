@@ -18,4 +18,4 @@ rds_db_name: tellmewheretoeat_api_production
 rds_username: tellmewheretoeat
 rds_password: Ildetellmewheretoeat90
 rds_host: aa6yykem3vxitv.ctpjabigvmf6.us-east-1.rds.amazonaws.com
-rds_port: 5432
+rds_port: '5432'
