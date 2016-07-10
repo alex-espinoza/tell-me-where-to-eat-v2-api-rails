@@ -91,6 +91,7 @@ GEM
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.rc2)
@@ -164,12 +165,16 @@ DEPENDENCIES
   pg (~> 0.18)
   pry-rails
   puma
+  rack-cors
   rails (>= 5.0.0.rc2, < 5.1)
   rails_12factor
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   yelp
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5
