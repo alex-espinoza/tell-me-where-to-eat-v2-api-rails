@@ -1,3 +1,3 @@
 class EstablishmentSerializer < ActiveModel::Serializer
-  attributes :name, :categories, :phone_number, :url, :address
+  attributes :name, :categories, :phone_number, :url, :address, :coordinates
 end
