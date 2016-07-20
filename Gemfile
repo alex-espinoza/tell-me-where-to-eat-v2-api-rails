@@ -20,6 +20,7 @@ gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'yelp'
 gem 'figaro'
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
