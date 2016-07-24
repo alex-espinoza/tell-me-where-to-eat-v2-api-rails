@@ -5,24 +5,12 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
-if Rails.env.production?
-  Rails.application.config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins 's3.amazonaws.com'
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'
 
-      resource '/api',
-        headers: :any,
-        methods: [:get]
-    end
-  end
-else
-  Rails.application.config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins '*'
-
-      resource '*',
-        headers: :any,
-        methods: [:any]
-    end
+    resource '*',
+      headers: :any,
+      methods: [:get]
   end
 end
