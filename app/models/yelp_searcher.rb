@@ -1,10 +1,12 @@
 class YelpSearcher
+  attr_reader :latitude, :longitude, :meters, :sort, :categories, :response
   RESULTS_LIMIT = 20
 
   def initialize(latitude, longitude, meters)
     @latitude = latitude
     @longitude = longitude
     @meters = meters
+    create_randomized_search_parameters
   end
 
   def create_randomized_search_parameters

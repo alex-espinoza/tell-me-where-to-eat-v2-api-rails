@@ -1,7 +1,6 @@
 class Api::EstablishmentsController < ApplicationController
   def find
     searcher = YelpSearcher.new(params[:latitude], params[:longitude], params[:radius]);
-    searcher.create_randomized_search_parameters
 
     begin
       searcher.search
