@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Establishment do
   describe '#build_for_api_response' do
     it "creates a hash of establishment's relevant data to return to the client" do
-      random_establishment = make_yelp_api_call(805)
+      random_establishment = make_yelp_api_call(805, true)
       establishment = Establishment.build_for_api_response(random_establishment)
 
       expect(establishment.name).to eq(random_establishment.name)
