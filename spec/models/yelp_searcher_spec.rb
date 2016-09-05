@@ -29,4 +29,30 @@ describe YelpSearcher do
       expect(establishment.name.blank?).to eq(false)
     end
   end
+
+  describe 'returns an establishment and the distance is' do
+    it 'within a quarter of a mile' do
+      establishment = make_yelp_api_call(403, true)
+
+      expect(establishment.distance <= 403).to eq(true)
+    end
+
+    it 'within half a mile' do
+      establishment = make_yelp_api_call(805, true)
+
+      expect(establishment.distance <= 805).to eq(true)
+    end
+
+    it 'within a mile' do
+      establishment = make_yelp_api_call(1610, true)
+
+      expect(establishment.distance <= 1610).to eq(true)
+    end
+
+    it 'within two miles' do
+      establishment = make_yelp_api_call(3219, true)
+
+      expect(establishment.distance <= 3219).to eq(true)
+    end
+  end
 end
