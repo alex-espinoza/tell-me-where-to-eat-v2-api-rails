@@ -27,6 +27,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'vcr'
 end
 
 group :development do
