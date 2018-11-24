@@ -162,7 +162,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    yelp-fusion (0.2.1.pre.beta)
+    yelp-fusion (0.3.pre.beta)
       faraday (~> 0.15.2)
       faraday_middleware (~> 0.12.2)
       minitest (>= 4.2.0)
@@ -187,7 +187,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   vcr
-  yelp-fusion (= 0.2.1.pre.beta)
+  yelp-fusion (= 0.3.pre.beta)
 
 RUBY VERSION
    ruby 2.4.1p111
