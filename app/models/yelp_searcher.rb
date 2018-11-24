@@ -15,7 +15,7 @@ class YelpSearcher
   end
 
   def search
-    @response = Yelp.client.search_by_coordinates(
+    @response = Yelp::Fusion.client.search_by_coordinates(
       {
         latitude: @latitude,
         longitude: @longitude
