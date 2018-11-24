@@ -4,7 +4,7 @@ class Api::EstablishmentsController < ApplicationController
 
     begin
       searcher.search
-    rescue Yelp::Error::Base => e
+    rescue Yelp::Fusion::Error::Base => e
       return render json: {error: e},
                     status: 500
     end
