@@ -17,7 +17,9 @@ class YelpSearcher
   end
 
   def search
-    @response = Yelp::Fusion.client.search_by_coordinates(
+    yelp_client = Yelp::Fusion::Client.new(Rails.application.secrets.yelp_api_key)
+
+    @response = yelp_client.search_by_coordinates(
       {
         latitude: @latitude,
         longitude: @longitude
