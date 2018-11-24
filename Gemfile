@@ -18,7 +18,7 @@ gem 'puma'
 gem 'rack-cors'
 
 gem 'active_model_serializers', '~> 0.10.0'
-gem 'yelp', '2.1.2'
+gem 'yelp-fusion', '0.2.1-beta'
 gem 'figaro'
 gem 'geocoder', '1.3.7'
 
