@@ -1,3 +1,5 @@
+require 'yelp/fusion'
+
 class YelpSearcher
   attr_reader :latitude, :longitude, :meters, :sort, :categories, :response
   RESULTS_LIMIT = 20
@@ -15,7 +17,7 @@ class YelpSearcher
   end
 
   def search
-    @response = yelp_fusion.search_by_coordinates(
+    @response = Yelp::Fusion.client.search_by_coordinates(
       {
         latitude: @latitude,
         longitude: @longitude
